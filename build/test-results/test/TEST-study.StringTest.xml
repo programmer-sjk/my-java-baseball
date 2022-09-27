@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.StringTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-09-27T10:04:01" hostname="DESKTOP-EQF079V" time="0.108">
+  <properties/>
+  <testcase name="문자열에서 특정 위치값이 범위를 초과할 경우 예외가 발생한다" classname="study.StringTest" time="0.108"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

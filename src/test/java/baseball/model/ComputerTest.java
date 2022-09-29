@@ -11,7 +11,7 @@ public class ComputerTest {
     @ParameterizedTest
     @CsvSource(value = {"123:1", "185:1", "238:2", "138:3", "418:1", "538:2"}, delimiter = ':')
     void 스트라이크_개수를_구한다(String input, String expect) {
-        Computer computer = new Computer(138);
+        Computer computer = new Computer("138");
         assertThat(computer.getStrikeCount(input)).isEqualTo(Integer.parseInt(expect));
     }
 
@@ -19,7 +19,7 @@ public class ComputerTest {
     @ParameterizedTest
     @CsvSource(value = {"123:0", "185:1", "163:1", "654:2", "615:2", "564:3"}, delimiter = ':')
     void 볼_개수를_구한다(String input, String expect) {
-        Computer computer = new Computer(456);
+        Computer computer = new Computer("456");
         assertThat(computer.getBallCount(input)).isEqualTo(Integer.parseInt(expect));
     }
 }

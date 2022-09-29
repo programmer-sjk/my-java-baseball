@@ -6,19 +6,29 @@ public class BaseBallScreen {
     }
 
     public static void count(int strikeCount, int ballCount) {
+        ballCount(ballCount);
+        strikeCount(strikeCount);
+        nothingCount(strikeCount, ballCount);
+
+        System.out.println();
+    }
+
+    private static void ballCount(int ballCount) {
         if (ballCount > 0) {
             System.out.print(ballCount + "볼 ");
         }
+    }
 
+    private static void strikeCount(int strikeCount) {
         if (strikeCount > 0) {
             System.out.print(strikeCount + "스트라이크");
         }
+    }
 
+    private static void nothingCount(int strikeCount, int ballCount) {
         if (strikeCount == 0 && ballCount == 0) {
             System.out.print("낫싱");
         }
-
-        System.out.println();
     }
 
     public static void finish() {

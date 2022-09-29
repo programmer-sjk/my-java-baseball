@@ -8,9 +8,10 @@ import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 import baseball.view.BaseBallScreen;
 
 public class Application {
-    public static final int MIN = 100;
-    public static final int MAX = 999;
+    public static final int MIN = 1;
+    public static final int MAX = 9;
     public static final int BASEBALL_NUMBER_LENGTH = 3;
+
     public static final String RESTART_SIGNAL = "1";
 
     public static void main(String[] args) {
@@ -23,7 +24,7 @@ public class Application {
 
     private static boolean play() {
         Boolean isRoundFinish = false;
-        Computer computer = new Computer(pickNumberInRange(MIN, MAX));
+        Computer computer = new Computer(randomNumber());
 
         while (isRoundFinish == false) {
             isRoundFinish = playRound(computer);
@@ -31,6 +32,18 @@ public class Application {
 
         return restart();
     }
+
+    private static String randomNumber() {
+        String result = "";
+
+        int index = 0;
+        while (index++ < BASEBALL_NUMBER_LENGTH) {
+            result += String.valueOf(pickNumberInRange(MIN, MAX));
+        }
+
+        return result;
+    }
+
 
     private static boolean playRound(Computer computer) {
         BaseBallScreen.inputNumber();

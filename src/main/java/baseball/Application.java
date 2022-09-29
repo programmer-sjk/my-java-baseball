@@ -16,6 +16,11 @@ public class Application {
         BaseBallScreen.inputNumber();
         String input = readLine();
         validateInput(input);
+
+        int strikeCount = computer.getStrikeCount(input);
+        int ballCount = computer.getBallCount(input);
+
+        BaseBallScreen.count(strikeCount, ballCount);
     }
     private static void validateInput(String input) {
         validateInputLength(input);

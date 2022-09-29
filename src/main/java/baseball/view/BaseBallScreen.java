@@ -14,6 +14,10 @@ public class BaseBallScreen {
             System.out.print(strikeCount + "스트라이크");
         }
 
+        if (strikeCount == 0 && ballCount == 0) {
+            System.out.print("낫싱");
+        }
+
         System.out.println();
     }
 }

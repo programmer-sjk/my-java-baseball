@@ -22,4 +22,10 @@ public class NumberGeneratorTest {
 
         assertThat(set.size()).isEqualTo(expectedSize);
     }
+
+    @DisplayName("입력 길이만큼의 숫자를 생성한다")
+    @RepeatedTest(10)
+    void 숫자_길이_테스트() {
+        assertThat(NumberGenerator.create(3).length()).isEqualTo(3);
+    }
 }

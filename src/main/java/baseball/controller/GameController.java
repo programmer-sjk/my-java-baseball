@@ -39,10 +39,6 @@ public class GameController {
         return readLine().equals(RESTART_SIGNAL) ? true : false;
     }
 
-    private boolean matchAll(int strikeCount) {
-        return strikeCount == BASEBALL_NUMBER_LENGTH;
-    }
-
     private void validateInput(String input) {
         validateInputLength(input);
         validateIsInteger(input);
@@ -59,5 +55,9 @@ public class GameController {
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("숫자가 아닙니다.");
         }
+    }
+
+    private boolean matchAll(int strikeCount) {
+        return strikeCount == BASEBALL_NUMBER_LENGTH;
     }
 }

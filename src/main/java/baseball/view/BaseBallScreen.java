@@ -1,7 +1,5 @@
 package baseball.view;
 
-import baseball.constant.ResultType;
-
 public class BaseBallScreen {
     public static void inputNumber() {
         System.out.print("숫자를 입력해주세요 : ");
@@ -17,19 +15,19 @@ public class BaseBallScreen {
 
     private static void ballCount(int ballCount) {
         if (ballCount > 0) {
-            System.out.print(ballCount + ResultType.BALL + " ");
+            System.out.print(ballCount + "볼 ");
         }
     }
 
     private static void strikeCount(int strikeCount) {
         if (strikeCount > 0) {
-            System.out.print(strikeCount + ResultType.STRIKE);
+            System.out.print(strikeCount + "스트라이크");
         }
     }
 
     private static void nothingCount(int strikeCount, int ballCount) {
         if (strikeCount == 0 && ballCount == 0) {
-            System.out.print(ResultType.NOTHING);
+            System.out.print("낫싱");
         }
     }
 

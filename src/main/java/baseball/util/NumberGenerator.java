@@ -1,5 +1,8 @@
 package baseball.util;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class NumberGenerator {
@@ -7,20 +10,12 @@ public class NumberGenerator {
     public static final int MAX = 9;
 
     public static String create(int length) {
-        String result = "";
+        Set<String> result = new LinkedHashSet<>();
 
-        while (result.length() < length) {
-            result = concatIfUnique(String.valueOf(pickNumberInRange(MIN, MAX)), result);
+        while (result.size() < length) {
+            result.add(String.valueOf(pickNumberInRange(MIN, MAX)));
         }
 
-        return result;
-    }
-
-    private static String concatIfUnique(String value, String result) {
-        if (result.contains(value)) {
-            return result;
-        }
-
-        return result + value;
+        return String.join("", result);
     }
 }

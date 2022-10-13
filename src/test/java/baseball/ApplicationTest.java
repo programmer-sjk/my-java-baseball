@@ -45,7 +45,7 @@ class ApplicationTest extends NsTest {
 
     @DisplayName("입력값의 길이가 맞지 않을 경우, 예외가 발생한다")
     @ParameterizedTest
-    @ValueSource(strings = {" ", "1", "12", "1234", "12345"})
+    @ValueSource(strings = {"1", "12", "1234", "12345"})
     void 다양한_입력값_길이예외_테스트(String input) {
         assertSimpleTest(() ->
                 assertThatThrownBy(() -> runException(input))

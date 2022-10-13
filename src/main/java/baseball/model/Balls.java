@@ -1,5 +1,6 @@
 package baseball.model;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -19,5 +20,14 @@ public class Balls {
         if (uniqueBalls.size() != BASEBALL_NUMBER_LENGTH) {
             throw new IllegalArgumentException("3자리의 숫자가 아닙니다.");
         }
+    }
+
+    public List<Integer> getNumbers() {
+        List<Integer> numbers = new ArrayList<>();
+        for (Ball ball : balls) {
+            numbers.add(ball.getNumber());
+        }
+
+        return numbers;
     }
 }

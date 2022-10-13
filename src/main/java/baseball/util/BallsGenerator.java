@@ -5,14 +5,14 @@ import baseball.model.Balls;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class BallsGenerator {
-    public static Balls create(Set<String> numbers) {
+    private static final String DELIMITER = "";
+    public static Balls create(String number) {
         List<Ball> balls = new ArrayList<>();
 
-        for (String number : numbers) {
-            balls.add(new Ball(Integer.parseInt(number)));
+        for (String value : number.split(DELIMITER)) {
+            balls.add(new Ball(Integer.parseInt(value)));
         }
 
         return new Balls(balls);

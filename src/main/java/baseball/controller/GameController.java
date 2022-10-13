@@ -1,8 +1,10 @@
 package baseball.controller;
 
 import baseball.constant.GameStatus;
+import baseball.model.Balls;
 import baseball.model.Computer;
-import baseball.util.NumberGenerator;
+import baseball.util.BallsGenerator;
+import baseball.util.Random;
 import baseball.view.BaseBallScreen;
 
 import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
@@ -11,7 +13,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class GameController {
     public void play() {
         Boolean isRoundFinish = false;
-        Computer computer = new Computer(NumberGenerator.create());
+        Computer computer = new Computer(BallsGenerator.create(Random.create()));
 
         while (isRoundFinish == false) {
             isRoundFinish = playRound(computer);
@@ -20,11 +22,11 @@ public class GameController {
 
     private boolean playRound(Computer computer) {
         BaseBallScreen.inputNumber();
-        String input = readLine();
-        validateInput(input);
+        Balls balls = BallsGenerator.create(readLine());
+        //validateInput(input);
 
-        int strikeCount = computer.getStrikeCount(input);
-        int ballCount = computer.getBallCount(input);
+        int strikeCount = computer.getStrikeCount(balls);
+        int ballCount = computer.getBallCount(balls);
 
         BaseBallScreen.count(strikeCount, ballCount);
 

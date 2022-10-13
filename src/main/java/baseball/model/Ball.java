@@ -17,4 +17,8 @@ public class Ball {
 
         throw new IllegalArgumentException("숫자가 유효한 범위 안에 있지 않습니다.");
     }
+
+    public int getNumber() {
+        return number;
+    }
 }

@@ -6,7 +6,7 @@ import java.util.Set;
 import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
-public class NumberGenerator {
+public class Random {
     public static final int MIN = 1;
     public static final int MAX = 9;
 
@@ -16,6 +16,8 @@ public class NumberGenerator {
         while (result.size() < BASEBALL_NUMBER_LENGTH) {
             result.add(String.valueOf(pickNumberInRange(MIN, MAX)));
         }
+
+        System.out.println(result);
 
         return String.join("", result);
     }

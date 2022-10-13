@@ -5,14 +5,13 @@ import baseball.model.Computer;
 import baseball.util.NumberGenerator;
 import baseball.view.BaseBallScreen;
 
+import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class GameController {
-    public static final int BASEBALL_NUMBER_LENGTH = 3;
-
     public void play() {
         Boolean isRoundFinish = false;
-        Computer computer = new Computer(NumberGenerator.create(BASEBALL_NUMBER_LENGTH));
+        Computer computer = new Computer(NumberGenerator.create());
 
         while (isRoundFinish == false) {
             isRoundFinish = playRound(computer);

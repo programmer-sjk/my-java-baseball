@@ -18,7 +18,7 @@ public class Balls {
     private void validateDuplicate(List<Ball> balls) {
         Set<Ball> uniqueBalls = new HashSet<>(balls);
         if (uniqueBalls.size() != BASEBALL_NUMBER_LENGTH) {
-            throw new IllegalArgumentException("3자리의 숫자가 아닙니다.");
+            throw new IllegalArgumentException("입력값 길이가 맞지 않습니다.");
         }
     }
 

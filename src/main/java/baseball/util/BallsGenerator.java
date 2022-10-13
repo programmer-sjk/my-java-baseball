@@ -12,9 +12,17 @@ public class BallsGenerator {
         List<Ball> balls = new ArrayList<>();
 
         for (String value : number.split(DELIMITER)) {
-            balls.add(new Ball(Integer.parseInt(value)));
+            balls.add(new Ball(convertInteger(value)));
         }
 
         return new Balls(balls);
+    }
+
+    private static int convertInteger(String value) {
+        try {
+            return Integer.parseInt(value);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("숫자가 아닙니다.");
+        }
     }
 }

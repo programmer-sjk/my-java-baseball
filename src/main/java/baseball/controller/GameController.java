@@ -10,15 +10,13 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class GameController {
     public static final int BASEBALL_NUMBER_LENGTH = 3;
 
-    public boolean play() {
+    public void play() {
         Boolean isRoundFinish = false;
         Computer computer = new Computer(NumberGenerator.create(BASEBALL_NUMBER_LENGTH));
 
         while (isRoundFinish == false) {
             isRoundFinish = playRound(computer);
         }
-
-        return restart();
     }
 
     private boolean playRound(Computer computer) {
@@ -31,10 +29,10 @@ public class GameController {
 
         BaseBallScreen.count(strikeCount, ballCount);
 
-        return matchAll(strikeCount);
+        return isAllStrike(strikeCount);
     }
 
-    private boolean restart() {
+    public boolean restart() {
         BaseBallScreen.finish();
         return isRestart(readLine());
     }
@@ -69,7 +67,7 @@ public class GameController {
         }
     }
 
-    private boolean matchAll(int strikeCount) {
+    private boolean isAllStrike(int strikeCount) {
         return strikeCount == BASEBALL_NUMBER_LENGTH;
     }
 }

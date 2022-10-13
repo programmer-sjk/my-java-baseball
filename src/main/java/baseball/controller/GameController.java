@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.constant.GameStatus;
 import baseball.model.Computer;
 import baseball.util.NumberGenerator;
 import baseball.view.BaseBallScreen;
@@ -8,7 +9,6 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class GameController {
     public static final int BASEBALL_NUMBER_LENGTH = 3;
-    public static final String RESTART_SIGNAL = "1";
 
     public boolean play() {
         Boolean isRoundFinish = false;
@@ -34,9 +34,21 @@ public class GameController {
         return matchAll(strikeCount);
     }
 
-    private Boolean restart() {
+    private boolean restart() {
         BaseBallScreen.finish();
-        return readLine().equals(RESTART_SIGNAL) ? true : false;
+        return isRestart(readLine());
+    }
+
+    private boolean isRestart(String userInput) {
+        if (GameStatus.RESTART.equals(userInput)) {
+            return true;
+        }
+
+        if (GameStatus.STOP.equals(userInput)) {
+            return false;
+        }
+
+        throw new IllegalArgumentException("게임 재시작, 종료에 올바르지 않은 값이 입력되었습니다");
     }
 
     private void validateInput(String input) {

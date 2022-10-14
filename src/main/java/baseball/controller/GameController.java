@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.constant.Error;
 import baseball.constant.GameStatus;
 import baseball.model.Balls;
 import baseball.model.Computer;
@@ -46,7 +47,7 @@ public class GameController {
             return false;
         }
 
-        throw new IllegalArgumentException("게임 재시작, 종료에 올바르지 않은 값이 입력되었습니다");
+        throw new IllegalArgumentException(Error.INVALID_INPUT_RESTART.toString());
     }
 
     private boolean isAllStrike(int strikeCount) {

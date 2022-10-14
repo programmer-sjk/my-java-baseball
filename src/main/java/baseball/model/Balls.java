@@ -1,5 +1,7 @@
 package baseball.model;
 
+import baseball.constant.Error;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -18,7 +20,7 @@ public class Balls {
     private void validateDuplicate(List<Ball> balls) {
         Set<Ball> uniqueBalls = new HashSet<>(balls);
         if (uniqueBalls.size() != BASEBALL_NUMBER_LENGTH) {
-            throw new IllegalArgumentException("입력값 길이가 맞지 않습니다.");
+            throw new IllegalArgumentException(Error.INVALID_LENGTH.toString());
         }
     }
 

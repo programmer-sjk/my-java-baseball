@@ -1,6 +1,7 @@
 package baseball.model;
 
 import baseball.constant.BaseBall;
+import baseball.constant.Error;
 
 public class Ball {
     private final int number;
@@ -15,7 +16,7 @@ public class Ball {
             return ;
         }
 
-        throw new IllegalArgumentException("숫자가 유효한 범위 안에 있지 않습니다.");
+        throw new IllegalArgumentException(Error.INVALID_RANGE.toString());
     }
 
     public int getNumber() {

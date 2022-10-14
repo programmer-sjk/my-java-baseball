@@ -18,19 +18,14 @@ public class Balls {
     }
 
     private void validateDuplicate(List<Ball> balls) {
-        Set<Ball> uniqueBalls = new HashSet<>(balls);
+        Set<Integer> uniqueBalls = new HashSet<>();
+        for (Ball ball : balls) {
+            uniqueBalls.add(ball.getNumber());
+        }
+
         if (uniqueBalls.size() != BASEBALL_NUMBER_LENGTH) {
             throw new IllegalArgumentException(Error.INVALID_LENGTH.toString());
         }
-    }
-
-    public List<Integer> getNumbers() {
-        List<Integer> numbers = new ArrayList<>();
-        for (Ball ball : balls) {
-            numbers.add(ball.getNumber());
-        }
-
-        return numbers;
     }
 
     public int size() {

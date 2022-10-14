@@ -32,4 +32,12 @@ public class Balls {
 
         return numbers;
     }
+
+    public int size() {
+        return this.balls.size();
+    }
+
+    public int numberByIndex(int index) {
+        return this.balls.get(index).getNumber();
+    }
 }

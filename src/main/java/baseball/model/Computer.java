@@ -10,8 +10,8 @@ public class Computer {
     public int getStrikeCount(Balls input) {
         int strikeCount = 0;
 
-        for (int i = 0; i < balls.getNumbers().size(); i++) {
-            strikeCount += equalCount(balls.getNumbers().get(i), input.getNumbers().get(i));
+        for (int i = 0; i < balls.size(); i++) {
+            strikeCount += equalCount(balls.numberByIndex(i), input.numberByIndex(i));
         }
 
         return strikeCount;
@@ -20,17 +20,16 @@ public class Computer {
     public int getBallCount(Balls balls) {
         int ballCount = 0;
 
-        for (int i = 0; i < balls.getNumbers().size(); i++) {
-            ballCount += ballCount(i, balls.getNumbers().get(i));
+        for (int i = 0; i < balls.size(); i++) {
+            ballCount += ballCount(i, balls.numberByIndex(i));
         }
 
         return ballCount;
     }
-
     private int ballCount(int index, int value) {
         int ballCount = 0;
 
-        for (int i = 0; i < balls.getNumbers().size(); i++) {
+        for (int i = 0; i < balls.size(); i++) {
             ballCount += countIfDifferentPositionEqual(index, i, value);
         }
 
@@ -43,7 +42,7 @@ public class Computer {
             int value
     ) {
         if (inputIndex != computerIndex) {
-            return equalCount(value, balls.getNumbers().get(computerIndex));
+            return equalCount(value, balls.numberByIndex(computerIndex));
         }
 
         return 0;

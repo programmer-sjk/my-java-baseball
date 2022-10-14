@@ -4,6 +4,7 @@ import baseball.constant.Error;
 import baseball.constant.GameStatus;
 import baseball.model.Balls;
 import baseball.model.Computer;
+import baseball.model.Referee;
 import baseball.util.BallsGenerator;
 import baseball.util.Random;
 import baseball.view.BaseBallScreen;
@@ -24,13 +25,11 @@ public class GameController {
     private boolean playRound(Computer computer) {
         BaseBallScreen.inputNumber();
         Balls balls = BallsGenerator.create(readLine());
+        Referee referee = new Referee(computer.getBalls(), balls);
 
-        int strikeCount = computer.getStrikeCount(balls);
-        int ballCount = computer.getBallCount(balls);
+        BaseBallScreen.count(referee.getStrikeCount(), referee.getBallCount());
 
-        BaseBallScreen.count(strikeCount, ballCount);
-
-        return isAllStrike(strikeCount);
+        return referee.isAllStrike();
     }
 
     public boolean restart() {
@@ -48,9 +47,5 @@ public class GameController {
         }
 
         throw new IllegalArgumentException(Error.INVALID_INPUT_RESTART.toString());
-    }
-
-    private boolean isAllStrike(int strikeCount) {
-        return strikeCount == BASEBALL_NUMBER_LENGTH;
     }
 }

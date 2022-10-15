@@ -9,7 +9,6 @@ import baseball.util.BallsGenerator;
 import baseball.util.Random;
 import baseball.view.BaseBallScreen;
 
-import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
 public class GameController {

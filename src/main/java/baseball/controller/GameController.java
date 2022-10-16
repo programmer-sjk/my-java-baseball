@@ -8,8 +8,7 @@ import baseball.model.Referee;
 import baseball.util.BallsGenerator;
 import baseball.util.Random;
 import baseball.view.BaseBallScreen;
-
-import static camp.nextstep.edu.missionutils.Console.readLine;
+import baseball.view.Input;
 
 public class GameController {
     public void play() {
@@ -23,7 +22,7 @@ public class GameController {
 
     private boolean playRound(Computer computer) {
         BaseBallScreen.inputNumber();
-        Balls balls = BallsGenerator.create(readLine());
+        Balls balls = BallsGenerator.create(Input.read());
         Referee referee = new Referee(computer.getBalls(), balls);
 
         BaseBallScreen.count(referee.getStrikeCount(), referee.getBallCount());
@@ -33,7 +32,7 @@ public class GameController {
 
     public boolean restart() {
         BaseBallScreen.finish();
-        return isRestart(readLine());
+        return isRestart(Input.read());
     }
 
     private boolean isRestart(String userInput) {

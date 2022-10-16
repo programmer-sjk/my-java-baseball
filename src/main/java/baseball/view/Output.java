@@ -2,7 +2,7 @@ package baseball.view;
 
 import baseball.constant.ResultType;
 
-public class BaseBallScreen {
+public class Output {
     public static void inputNumber() {
         System.out.print("숫자를 입력해주세요 : ");
     }

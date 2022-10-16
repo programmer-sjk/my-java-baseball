@@ -7,7 +7,7 @@ import baseball.model.Computer;
 import baseball.model.Referee;
 import baseball.util.BallsGenerator;
 import baseball.util.Random;
-import baseball.view.BaseBallScreen;
+import baseball.view.Output;
 import baseball.view.Input;
 
 public class GameController {
@@ -21,17 +21,17 @@ public class GameController {
     }
 
     private boolean playRound(Computer computer) {
-        BaseBallScreen.inputNumber();
+        Output.inputNumber();
         Balls balls = BallsGenerator.create(Input.read());
         Referee referee = new Referee(computer.getBalls(), balls);
 
-        BaseBallScreen.count(referee.getStrikeCount(), referee.getBallCount());
+        Output.count(referee.getStrikeCount(), referee.getBallCount());
 
         return referee.isAllStrike();
     }
 
     public boolean restart() {
-        BaseBallScreen.finish();
+        Output.finish();
         return isRestart(Input.read());
     }
 

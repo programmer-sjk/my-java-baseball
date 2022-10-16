@@ -7,6 +7,7 @@ public enum Error {
     IS_NOT_INTEGER("숫자가 아닙니다.");
 
     private final String description;
+
     Error(String description) {
         this.description = description;
     }

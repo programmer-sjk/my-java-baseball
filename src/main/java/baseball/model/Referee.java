@@ -1,7 +1,7 @@
 package baseball.model;
 
 public class Referee {
-    private static final int ALL_STRIKE_COUNT =3;
+    private static final int ALL_STRIKE_COUNT = 3;
 
     private boolean allStrike = false;
     private final Balls computerBalls;

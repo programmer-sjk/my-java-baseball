@@ -17,8 +17,6 @@ public class Random {
             result.add(String.valueOf(pickNumberInRange(MIN, MAX)));
         }
 
-        System.out.println(result);
-
         return String.join("", result);
     }
 }

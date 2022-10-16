@@ -7,7 +7,7 @@ public class Output {
         System.out.print("숫자를 입력해주세요 : ");
     }
 
-    public static void count(int strikeCount, int ballCount) {
+    public static void gameResult(int strikeCount, int ballCount) {
         ballCount(ballCount);
         strikeCount(strikeCount);
         nothingCount(strikeCount, ballCount);

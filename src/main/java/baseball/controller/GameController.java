@@ -25,7 +25,7 @@ public class GameController {
         Balls balls = BallsGenerator.create(Input.read());
         Referee referee = new Referee(computer.getBalls(), balls);
 
-        Output.count(referee.getStrikeCount(), referee.getBallCount());
+        Output.gameResult(referee.getStrikeCount(), referee.getBallCount());
 
         return referee.isAllStrike();
     }

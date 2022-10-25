@@ -36,11 +36,11 @@ public class GameController {
     }
 
     private boolean isRestart(String userInput) {
-        if (GameStatus.RESTART.equals(userInput)) {
+        if (GameStatus.isRestart(userInput)) {
             return true;
         }
 
-        if (GameStatus.STOP.equals(userInput)) {
+        if (GameStatus.isStop(userInput)) {
             return false;
         }
 

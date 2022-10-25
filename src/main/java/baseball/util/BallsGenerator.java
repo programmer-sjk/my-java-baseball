@@ -13,7 +13,7 @@ public class BallsGenerator {
         List<Ball> balls = new ArrayList<>();
 
         for (String value : number.split(DELIMITER)) {
-            balls.add(new Ball(convertInteger(value)));
+            balls.add(Ball.create(convertInteger(value)));
         }
 
         return Balls.create(balls);

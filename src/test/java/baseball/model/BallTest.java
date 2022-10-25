@@ -14,7 +14,7 @@ public class BallTest {
     @Test
     void 공이_가진_숫자를_구한다() {
         int expected = 3;
-        Ball ball = new Ball(expected);
+        Ball ball = Ball.create(expected);
         assertThat(ball.getNumber()).isEqualTo(expected);
     }
 
@@ -22,7 +22,7 @@ public class BallTest {
     @ParameterizedTest
     @ValueSource(strings = {"0", "10"})
     void 숫자_범위_예외_테스트(int input) {
-        assertThatThrownBy(() -> new Ball(input))
+        assertThatThrownBy(() -> Ball.create(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Error.INVALID_RANGE.toString());
     }

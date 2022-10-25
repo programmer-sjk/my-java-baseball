@@ -6,9 +6,13 @@ import baseball.constant.Error;
 public class Ball {
     private final int number;
 
-    public Ball(int number) {
+    private Ball(int number) {
         validateInRange(number);
         this.number = number;
+    }
+
+    public static Ball create(int number) {
+        return new Ball(number);
     }
 
     private void validateInRange(int number) {

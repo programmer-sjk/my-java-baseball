@@ -15,7 +15,7 @@ public class BallsTest {
 
     @BeforeAll
     static void setUp() {
-        balls = Balls.create(Arrays.asList(new Ball(1), new Ball(2), new Ball(3)));
+        balls = Balls.create(Arrays.asList(Ball.create(1), Ball.create(2), Ball.create(3)));
     }
 
     @DisplayName("Balls가 가진 Ball 크기를 구할수 있다.")
@@ -34,7 +34,7 @@ public class BallsTest {
     @Test
     void 숫자_중복_예외_테스트() {
         assertThatThrownBy(() ->
-            Balls.create(Arrays.asList(new Ball(1), new Ball(1), new Ball(1)))
+            Balls.create(Arrays.asList(Ball.create(1), Ball.create(1), Ball.create(1)))
         )
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Error.INVALID_LENGTH.toString());

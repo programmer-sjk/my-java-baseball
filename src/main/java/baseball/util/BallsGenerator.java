@@ -9,6 +9,7 @@ import java.util.List;
 
 public class BallsGenerator {
     private static final String DELIMITER = "";
+
     public static Balls create(String number) {
         List<Ball> balls = new ArrayList<>();
 

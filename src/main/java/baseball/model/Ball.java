@@ -16,11 +16,9 @@ public class Ball {
     }
 
     private void validateInRange(int number) {
-        if (number >= BaseBall.MIN_NUMBER && number <= BaseBall.MAX_NUMBER) {
-            return ;
+        if (number < BaseBall.MIN_NUMBER && number > BaseBall.MAX_NUMBER) {
+            throw new IllegalArgumentException(Error.INVALID_RANGE.toString());
         }
-
-        throw new IllegalArgumentException(Error.INVALID_RANGE.toString());
     }
 
     public int getNumber() {

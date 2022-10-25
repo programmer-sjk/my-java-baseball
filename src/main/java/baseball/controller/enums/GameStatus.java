@@ -1,4 +1,4 @@
-package baseball.constant;
+package baseball.controller.enums;
 
 public enum GameStatus {
     RESTART("1"),

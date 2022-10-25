@@ -1,6 +1,6 @@
 package baseball.util;
 
-import baseball.constant.Error;
+import baseball.enums.Error;
 import baseball.model.Ball;
 import baseball.model.Balls;
 

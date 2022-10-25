@@ -1,6 +1,6 @@
 package baseball.model;
 
-import baseball.constant.Error;
+import baseball.enums.Error;
 
 import java.util.HashSet;
 import java.util.List;

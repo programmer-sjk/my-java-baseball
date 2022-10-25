@@ -1,6 +1,6 @@
 package baseball.view;
 
-import baseball.constant.ResultType;
+import baseball.view.enums.ResultType;
 
 public class Output {
     public static void inputNumber() {

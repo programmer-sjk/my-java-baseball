@@ -1,7 +1,7 @@
 package baseball.model;
 
 import baseball.constant.BaseBall;
-import baseball.constant.Error;
+import baseball.enums.Error;
 
 public class Ball {
     private final int number;

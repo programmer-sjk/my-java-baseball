@@ -1,7 +1,7 @@
 package baseball.controller;
 
-import baseball.constant.Error;
-import baseball.constant.GameStatus;
+import baseball.enums.Error;
+import baseball.controller.enums.GameStatus;
 import baseball.model.Balls;
 import baseball.model.Computer;
 import baseball.model.Referee;

@@ -1,4 +1,4 @@
-package baseball.constant;
+package baseball.view.enums;
 
 public enum ResultType {
     STRIKE("스트라이크"),

@@ -2,8 +2,7 @@ package baseball.util;
 
 import java.util.*;
 
-import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
+import static baseball.common.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 
 public class Random {
     public static final int MIN = 1;

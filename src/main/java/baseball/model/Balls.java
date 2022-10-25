@@ -1,12 +1,12 @@
 package baseball.model;
 
-import baseball.enums.Error;
+import baseball.common.enums.Error;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
+import static baseball.common.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 
 public class Balls {
     private final List<Ball> balls;

@@ -1,4 +1,4 @@
-package baseball.enums;
+package baseball.common.enums;
 
 public enum Error {
     INVALID_INPUT_RESTART("게임 재시작, 종료에 올바르지 않은 값이 입력되었습니다"),

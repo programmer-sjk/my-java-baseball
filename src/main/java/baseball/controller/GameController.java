@@ -1,6 +1,6 @@
 package baseball.controller;
 
-import baseball.enums.Error;
+import baseball.common.enums.Error;
 import baseball.controller.enums.GameStatus;
 import baseball.model.Balls;
 import baseball.model.Computer;

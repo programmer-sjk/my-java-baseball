@@ -1,4 +1,4 @@
-package baseball.constant;
+package baseball.common.constant;
 
 public class BaseBall {
     public static final int MIN_NUMBER = 1;

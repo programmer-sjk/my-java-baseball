@@ -1,7 +1,6 @@
 package baseball.util;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.*;
 
 import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
@@ -11,12 +10,31 @@ public class Random {
     public static final int MAX = 9;
 
     public static String create() {
-        Set<String> result = new LinkedHashSet<>();
+        List<Integer> uniqueRandomNumbers = toSubList(shuffle(initialize()));
+        String result = "";
 
-        while (result.size() < BASEBALL_NUMBER_LENGTH) {
-            result.add(String.valueOf(pickNumberInRange(MIN, MAX)));
+        for (Integer number : uniqueRandomNumbers) {
+            result += String.valueOf(number);
         }
 
-        return String.join("", result);
+        return result;
+    }
+
+    private static List<Integer> initialize() {
+        List<Integer> numbers = new ArrayList<>();
+        for (int i = MIN; i <= MAX; i++) {
+            numbers.add(i);
+        }
+
+        return numbers;
+    }
+
+    private static List<Integer> shuffle(List<Integer> numbers) {
+        Collections.shuffle(numbers);
+        return numbers;
+    }
+
+    private static List<Integer> toSubList(List<Integer> numbers) {
+        return numbers.subList(0, BASEBALL_NUMBER_LENGTH);
     }
 }

@@ -16,7 +16,7 @@ public class BallsGenerator {
             balls.add(new Ball(convertInteger(value)));
         }
 
-        return new Balls(balls);
+        return Balls.create(balls);
     }
 
     private static int convertInteger(String value) {

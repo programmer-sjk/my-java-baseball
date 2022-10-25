@@ -11,9 +11,13 @@ import static baseball.constant.BaseBall.BASEBALL_NUMBER_LENGTH;
 public class Balls {
     private final List<Ball> balls;
 
-    public Balls(List<Ball> balls) {
+    private Balls(List<Ball> balls) {
         validateDuplicate(balls);
         this.balls = balls;
+    }
+
+    public static Balls create(List<Ball> balls) {
+        return new Balls(balls);
     }
 
     private void validateDuplicate(List<Ball> balls) {

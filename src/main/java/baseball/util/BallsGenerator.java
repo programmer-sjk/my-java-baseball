@@ -24,7 +24,7 @@ public class BallsGenerator {
         try {
             return Integer.parseInt(value);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(Error.IS_NOT_INTEGER.toString());
+            throw new IllegalArgumentException(Error.IS_NOT_INTEGER.getDescription());
         }
     }
 }

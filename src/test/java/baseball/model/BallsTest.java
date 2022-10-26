@@ -37,6 +37,6 @@ public class BallsTest {
             Balls.create(Arrays.asList(Ball.create(1), Ball.create(1), Ball.create(1)))
         )
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining(Error.INVALID_LENGTH.toString());
+                .hasMessageContaining(Error.INVALID_LENGTH.getDescription());
     }
 }

@@ -27,7 +27,7 @@ public class Balls {
         }
 
         if (uniqueBalls.size() != BASEBALL_NUMBER_LENGTH) {
-            throw new IllegalArgumentException(Error.INVALID_LENGTH.toString());
+            throw new IllegalArgumentException(Error.INVALID_LENGTH.getDescription());
         }
     }
 

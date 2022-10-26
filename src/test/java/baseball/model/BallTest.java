@@ -24,6 +24,6 @@ public class BallTest {
     void 숫자_범위_예외_테스트(int input) {
         assertThatThrownBy(() -> Ball.create(input))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining(Error.INVALID_RANGE.toString());
+                .hasMessageContaining(Error.INVALID_RANGE.getDescription());
     }
 }

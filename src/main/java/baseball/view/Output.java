@@ -17,19 +17,19 @@ public class Output {
 
     private static void ballCount(int ballCount) {
         if (ballCount > 0) {
-            System.out.print(ballCount + ResultType.BALL.toString() + " ");
+            System.out.print(ballCount + ResultType.BALL.getDescription() + " ");
         }
     }
 
     private static void strikeCount(int strikeCount) {
         if (strikeCount > 0) {
-            System.out.print(strikeCount + ResultType.STRIKE.toString());
+            System.out.print(strikeCount + ResultType.STRIKE.getDescription());
         }
     }
 
     private static void nothingCount(int strikeCount, int ballCount) {
         if (strikeCount == 0 && ballCount == 0) {
-            System.out.print(ResultType.NOTHING.toString());
+            System.out.print(ResultType.NOTHING.getDescription());
         }
     }
 

@@ -5,14 +5,13 @@ public enum ResultType {
     BALL("볼"),
     NOTHING("낫싱");
 
-    private final String result;
+    private final String description;
 
-    ResultType(String result) {
-        this.result = result;
+    ResultType(String description) {
+        this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return this.result;
+    public String getDescription() {
+        return this.description;
     }
 }

@@ -44,6 +44,6 @@ public class GameController {
             return false;
         }
 
-        throw new IllegalArgumentException(Error.INVALID_INPUT_RESTART.toString());
+        throw new IllegalArgumentException(Error.INVALID_INPUT_RESTART.getDescription());
     }
 }

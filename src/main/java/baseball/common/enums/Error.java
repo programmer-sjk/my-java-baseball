@@ -12,8 +12,7 @@ public enum Error {
         this.description = description;
     }
 
-    @Override
-    public String toString() {
+    public String getDescription() {
         return this.description;
     }
 }
